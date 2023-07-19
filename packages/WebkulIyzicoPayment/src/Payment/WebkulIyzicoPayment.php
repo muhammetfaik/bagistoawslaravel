@@ -15,6 +15,6 @@ class WebkulIyzicoPayment extends Payment
 
     public function getRedirectUrl()
     {
-        
+        return route('iyzico.redirect');
     }
 }
