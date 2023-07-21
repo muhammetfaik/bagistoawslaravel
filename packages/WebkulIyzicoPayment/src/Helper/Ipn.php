@@ -47,9 +47,9 @@ public function __construct(
  InvoiceRepository $invoiceRepository
  )
  {
- $this->orderRepository = $orderRepository;
+    $this->orderRepository = $orderRepository;
 
- $this->invoiceRepository = $invoiceRepository;
+    $this->invoiceRepository = $invoiceRepository;
  }
 
 /**
@@ -60,23 +60,23 @@ public function __construct(
  */
 public function processIpn($post)
  {
- $this->post = $post;
+        $this->post = $post;
 
- if (! $this->postBack()) {
- return;
- }
+        if (! $this->postBack()) {
+            return;
+        }
 
- try {
- if (isset($this->post['txn_type']) && 'recurring_payment' == $this->post['txn_type']) {
+        try {
+        if (isset($this->post['txn_type']) && 'recurring_payment' == $this->post['txn_type']) {
 
- } else {
- $this->getOrder();
+        } else {
+        $this->getOrder();
 
- $this->processOrder();
- }
- } catch (\Exception $e) {
- throw $e;
- }
+        $this->processOrder();
+        }
+        } catch (\Exception $e) {
+             throw $e;
+        }
  }
 
 /**
@@ -86,9 +86,9 @@ public function processIpn($post)
  */
 protected function getOrder()
  {
- if (empty($this->order)) {
- $this->order = $this->orderRepository->findOneByField(['cart_id' => $this->post['invoice']]);
- }
+    if (empty($this->order)) {
+        $this->order = $this->orderRepository->findOneByField(['cart_id' => $this->post['invoice']]);
+    }
  }
 
 /**
@@ -98,17 +98,17 @@ protected function getOrder()
  */
 protected function processOrder()
  {
- if ($this->post['payment_status'] == 'Completed') {
- if ($this->post['mc_gross'] != $this->order->grand_total) {
- return;
- } else {
- $this->orderRepository->update(['status' => 'processing'], $this->order->id);
+        if ($this->post['payment_status'] == 'Completed') {
+            if ($this->post['mc_gross'] != $this->order->grand_total) {
+                            return;
+         } else {
+                $this->orderRepository->update(['status' => 'processing'], $this->order->id);
 
- if ($this->order->canInvoice()) {
- $invoice = $this->invoiceRepository->create($this->prepareInvoiceData());
- }
- }
- }
+        if ($this->order->canInvoice()) {
+            $invoice = $this->invoiceRepository->create($this->prepareInvoiceData());
+        }
+        }
+        }
  }
 
 /**
@@ -118,14 +118,14 @@ protected function processOrder()
  */
 protected function prepareInvoiceData()
  {
- $invoiceData = [
- "order_id" => $this->order->id,
- ];
+    $invoiceData = [
+        "order_id" => $this->order->id,
+            ];
 
- foreach ($this->order->items as $item) {
- $invoiceData['invoice']['items'][$item->id] = $item->qty_to_invoice;
- }
+        foreach ($this->order->items as $item) {
+                $invoiceData['invoice']['items'][$item->id] = $item->qty_to_invoice;
+        }
 
- return $invoiceData;
+        return $invoiceData;
  }
 }
