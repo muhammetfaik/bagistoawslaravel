@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e3a6fddceb41f208eb3890870d022e38",
+    "content-hash": "0b74037b38b1ecec9f226d0d2fe26099",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -757,6 +757,78 @@
                 }
             ],
             "time": "2021-01-20T22:51:39+00:00"
+        },
+        {
+            "name": "codenteq/iyzico-payment-gateway",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codenteq/iyzico-payment-gateway.git",
+                "reference": "fac4080498cd1d1aabb0a07c18b23fb03a560e7b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codenteq/iyzico-payment-gateway/zipball/fac4080498cd1d1aabb0a07c18b23fb03a560e7b",
+                "reference": "fac4080498cd1d1aabb0a07c18b23fb03a560e7b",
+                "shasum": ""
+            },
+            "require": {
+                "iyzico/iyzipay-php": "^2.0"
+            },
+            "type": "package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Webkul\\Iyzico\\Providers\\IyzicoServiceProvider"
+                    ],
+                    "aliases": []
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Webkul\\Iyzico\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ahmet Sefa Arşiv",
+                    "email": "ahmetarsivpm@gmail.com",
+                    "homepage": "https://github.com/ahmetarsiv",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Ali Karabay",
+                    "email": "alikarabay77@gmail.com",
+                    "homepage": "https://github.com/karabayyazilim",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The Laravel eCommerce Iyzico Payment Gateway",
+            "homepage": "https://codenteq.com",
+            "keywords": [
+                "bagisto",
+                "codenteq",
+                "ecommerce",
+                "iyzico",
+                "opensource",
+                "payment"
+            ],
+            "support": {
+                "email": "info@codenteq.com",
+                "issues": "https://github.com/codenteq/iyzico-payment-gateway/issues",
+                "source": "https://github.com/codenteq/iyzico-payment-gateway"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/codenteq",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-03-21T06:28:08+00:00"
         },
         {
             "name": "doctrine/cache",

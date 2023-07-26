@@ -90,7 +90,7 @@ return [
     |
     */
 
-    'locale' => env('APP_LOCALE', 'en'),
+    'locale' => env('APP_LOCALE', 'tr'),
 
     /*
     |--------------------------------------------------------------------------
@@ -103,7 +103,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'tr',
 
     /*
     |--------------------------------------------------------------------------
@@ -129,7 +129,7 @@ return [
     |
     */
 
-    'currency' => env('APP_CURRENCY', 'USD'),
+    'currency' => env('APP_CURRENCY', 'TRY'),
 
     /*
     |--------------------------------------------------------------------------
@@ -281,8 +281,8 @@ return [
         Webkul\BookingProduct\Providers\BookingProductServiceProvider::class,
         Webkul\SocialLogin\Providers\SocialLoginServiceProvider::class,
         Webkul\DebugBar\Providers\DebugBarServiceProvider::class,
-	    Webkul\Marketing\Providers\MarketingServiceProvider::class,
-	    Webkul\IyzicoPayment\Providers\IyzicoPaymentServiceProvider::class,
+	Webkul\Marketing\Providers\MarketingServiceProvider::class,
+	Webkul\Iyzico\Providers\IyzicoServiceProvider::class,
     ],
 
     /*
