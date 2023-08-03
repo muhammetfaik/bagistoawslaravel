@@ -106,7 +106,8 @@
             "Webkul\\SocialLogin\\": "packages/Webkul/SocialLogin/src",
             "Webkul\\DebugBar\\": "packages/Webkul/DebugBar/src",
             "Webkul\\Marketing\\": "packages/Webkul/Marketing/src",
-	    "Webkul\\IyzicoPayment\\": "packages/Webkul/IyzicoPayment/src"
+	    "Webkul\\IyzicoPayment\\": "packages/Webkul/IyzicoPayment/src",
+	    "Mega\\HeaderFooter\\" :"packages/Mega/HeaderFooter/src"
 
         }
     },

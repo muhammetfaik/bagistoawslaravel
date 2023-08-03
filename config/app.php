@@ -283,6 +283,9 @@ return [
         Webkul\DebugBar\Providers\DebugBarServiceProvider::class,
 	Webkul\Marketing\Providers\MarketingServiceProvider::class,
 	Webkul\Iyzico\Providers\IyzicoServiceProvider::class,
+	Mega\HeaderFooter\Providers\HeaderFooterServiceProvider::class,
+
+
     ],
 
     /*
